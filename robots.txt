@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ryanksten.github.io/sitemap.xml
