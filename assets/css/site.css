@@ -200,6 +200,7 @@ p {
   height: 1px;
   background: currentColor;
   position: relative;
+  transition: transform 0.2s var(--ease), top 0.2s var(--ease), background 0.2s var(--ease);
 }
 
 .nav-toggle-bar::before,
@@ -217,30 +218,24 @@ p {
   top: 6px;
 }
 
+.site-header.is-open .nav-toggle-bar {
+  background: transparent;
+}
+
+.site-header.is-open .nav-toggle-bar::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.site-header.is-open .nav-toggle-bar::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 /* Hero — asymmetric editorial, not a centered stack */
 
 .hero {
-  position: relative;
   padding: clamp(3.5rem, 9vw, 6.5rem) 0 var(--section);
-  isolation: isolate;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    repeating-linear-gradient(
-      to right,
-      transparent 0,
-      transparent calc(100% / 12 - 1px),
-      var(--line) calc(100% / 12 - 1px),
-      var(--line) calc(100% / 12)
-    );
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 85%);
-  pointer-events: none;
-  opacity: 0.7;
 }
 
 .hero-grid {
@@ -262,7 +257,7 @@ p {
   font-style: italic;
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
   line-height: 1.35;
-  max-width: 22ch;
+  max-width: 38ch;
   margin: 0 0 1.5rem;
   color: var(--ink);
 }
@@ -304,9 +299,8 @@ p {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: 50% 12%;
   border: 1px solid var(--line-strong);
-  filter: grayscale(0.18) contrast(1.04);
 }
 
 .hero-portrait figcaption {
@@ -757,12 +751,13 @@ p {
 
   .hero-portrait {
     justify-self: start;
-    max-width: 16rem;
-    order: -1;
+    max-width: 13.5rem;
+    margin-top: 0.5rem;
   }
 
   .hero-grid {
     align-items: start;
+    gap: 2rem;
   }
 
   .now-col + .now-col {
