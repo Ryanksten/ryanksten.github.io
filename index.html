@@ -1,369 +1,437 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Ryan Stenning - Software Engineer</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-code"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Ryan Stenning</h1>
-								<p>Innovative Software Engineer | Problem Solver | Tech Enthusiast</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="#experience">Experience</a></li>
-								<li><a href="#skills">Skills</a></li>
-								<li><a href="#projects">Projects</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-                            
-						</nav>
-                        <audio controls>
-							<source src="images/piano jazz house remastered.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						  </audio>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About Me</h2>
-								<p>I am a passionate Software Engineer with expertise in developing scalable, reliable, and secure applications. My work focuses on leveraging technology to drive digital transformation and automation in organizations. With experience across frontend and backend development, I am driven by a desire to solve complex problems and streamline operations for businesses worldwide.</p>
-								<p>I thrive in Agile environments, always seeking opportunities to integrate automation, improve workflows, and maximize efficiency.</p>
-								<a href="images/Ryan Cv 2024.pdf" download="Ryan_Stenning_CV.pdf">
-									<button class="button primary">Download My CV</button>
-								</a>
-								<span class="image main"><img src="images/WhatsApp Image 2024-10-23 at 14.28.28_bb00d0bc.jpg" alt="About Me" /></span>
-							</article>
-
-						<!-- Experience -->
-							<article id="experience">
-								<h2 class="major">Work Experience</h2>
-								<ul><a href="images/Ryan Cv 2024.pdf" download="Ryan_Stenning_CV.pdf">
-									<button class="button primary">Download My CV</button>
-								</a></ul>
-								<h3>Software Engineer - VAT IT (PTY) Ltd.</h3>
-								<p>Jul 2024 - Present</p>
-								<ul>
-									<li>Built automated invoice submission microservice with Selenium and Spring Boot.</li>
-									<li>Developed web scraping automation tools and managed cloud integration with AWS.</li>
-									<li>Automated HR ticketing system using Power Automate, handling tasks for over 1000 employees.</li>
-								</ul>
-
-								<h3>Automation & Salesforce Developer - VAT IT (PTY) Ltd.</h3>
-								<p>Jan 2023 - Jun 2024</p>
-								<ul>
-									<li>Spearheaded RPA and Salesforce initiatives, significantly enhancing operational efficiency.</li>
-									<li>Enhanced Salesforce functionality through custom flows and Apex development.</li>
-									<li>Implemented ETL processes and integrated external service APIs.</li>
-								</ul>
-
-								<h3>Founder/Owner - Rewired Web Development</h3>
-								<p>Jan 2024 - Present</p>
-								<ul>
-									<li>Provided web development services, specializing in scalable front-end and back-end systems.</li>
-								</ul>
-							</article>
-
-						<!-- Skills -->
-							<article id="skills">
-								<h2 class="major">Technical Skills</h2>
-								<ul>
-									<li>Languages: Kotlin, Java, Typescript, SQL, SOQL</li>
-									<li>Frontend: Angular</li>
-									<li>Backend: Spring Boot, Microservices</li>
-									<li>Cloud Platforms: AWS, Azure, Power Platform</li>
-									<li>Automation: Selenium, Automation Anywhere (RPA)</li>
-									<li>Salesforce Development: Apex, Salesforce Flows, Lightning Web Components</li>
-									<li>Data Integration: Flowgear, API Integrations</li>
-									<li>Version Control: Git/GitHub</li>
-									<li>Methodologies: Agile, Project Management</li>
-								</ul>
-							</article>
-
-						<!-- Projects -->
-							<article id="projects">
-								<h2 class="major">Notable Projects</h2>
-
-								<h3>Automated Invoice Submission</h3>
-								<p>Developed an automated system for submitting invoices to the UAE Tax Portal using Selenium and Spring Boot, ensuring reliability and reducing manual intervention.</p>
-
-								<h3>HR Ticketing System Automation</h3>
-								<p>Automated the HR ticketing system for a 1000-employee organization using MS Power Apps, Power Automate, and SharePoint, improving efficiency and maintaining data confidentiality.</p>
-
-								<h3>Web Scraping Automation for Tax Portals</h3>
-								<p>Created automation tools for web scraping tax portals, significantly improving the speed and reliability of communications and reporting with tax departments.</p>
-
-								<h3>ETL and Data Integration</h3>
-								<p>Implemented ETL processes for document retrieval from AWS, along with generating ROI reports and tracking analytics on bot activities.</p>
-                                <h3>Pong Game</h3>
-    <p>
-        <strong>How to Play:</strong> Use the left and right arrow keys to move the paddle. Your goal is to bounce the ball with the paddle and prevent it from falling below. The game ends if the ball touches the bottom of the screen. See how many times you can bounce the ball!
-    </p>
-
-    <p>Bounces: <span id="bounceCount">0</span></p>
-
-    <canvas id="pong" width="600" height="400"></canvas>
-    <button id="restartButton" style="display: none;">Start Over</button>
-
-    <script>
-        const canvas = document.getElementById('pong');
-        const ctx = canvas.getContext('2d');
-        const restartButton = document.getElementById('restartButton');
-        const bounceCountDisplay = document.getElementById('bounceCount');
-
-        let bounceCount = 0;
-        let gameOver = false;
-
-        // Paddle properties
-        const paddle = {
-            height: 10,
-            width: 75,
-            x: canvas.width / 2 - 75 / 2,
-            speed: 7,
-            dx: 0
-        };
-
-        // Ball properties
-        const ball = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            size: 10,
-            speed: 4,
-            dx: 4,
-            dy: -4
-        };
-
-        // Draw the paddle
-        function drawPaddle() {
-            ctx.fillStyle = '#0095dd';
-            ctx.fillRect(paddle.x, canvas.height - paddle.height, paddle.width, paddle.height);
-        }
-
-        // Draw the ball
-        function drawBall() {
-            ctx.beginPath();
-            ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
-            ctx.fillStyle = '#0095dd';
-            ctx.fill();
-            ctx.closePath();
-        }
-
-        // Draw "Game Over" text
-        function drawGameOver() {
-            ctx.font = '40px Arial';
-            ctx.fillStyle = '#0095dd';
-            ctx.fillText('Game Over', canvas.width / 3, canvas.height / 2);
-        }
-
-        // Move the paddle based on the current dx value
-        function movePaddle() {
-            paddle.x += paddle.dx;
-
-            // Wall collision (left/right)
-            if (paddle.x < 0) {
-                paddle.x = 0;
-            } else if (paddle.x + paddle.width > canvas.width) {
-                paddle.x = canvas.width - paddle.width;
-            }
-        }
-
-        // Move the ball
-        function moveBall() {
-            ball.x += ball.dx;
-            ball.y += ball.dy;
-
-            // Ball collision with walls (left/right)
-            if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
-                ball.dx *= -1; // Reverse horizontal direction
-            }
-
-            // Ball collision with walls (top)
-            if (ball.y - ball.size < 0) {
-                ball.dy *= -1; // Reverse vertical direction (top wall)
-            }
-
-            // Ball collision with paddle
-            if (
-                ball.y + ball.size > canvas.height - paddle.height &&
-                ball.x > paddle.x &&
-                ball.x < paddle.x + paddle.width
-            ) {
-                ball.dy *= -1; // Reverse vertical direction (when it hits the paddle)
-                bounceCount++; // Increase bounce count
-                bounceCountDisplay.textContent = bounceCount; // Update bounce count display
-            }
-
-            // Ball falls below paddle (game over)
-            if (ball.y + ball.size > canvas.height) {
-                gameOver = true; // Set game over flag to true
-                restartButton.style.display = 'block'; // Show "Start Over" button
-            }
-        }
-
-        // Handle keydown event for paddle movement
-        function keyDown(e) {
-            if (e.key === 'Right' || e.key === 'ArrowRight') {
-                paddle.dx = paddle.speed; // Move right
-            } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
-                paddle.dx = -paddle.speed; // Move left
-            }
-        }
-
-        // Handle keyup event to stop the paddle
-        function keyUp(e) {
-            if (e.key === 'Right' || e.key === 'ArrowRight' || e.key === 'Left' || e.key === 'ArrowLeft') {
-                paddle.dx = 0; // Stop the paddle when the key is released
-            }
-        }
-
-        // Restart the game
-        function restartGame() {
-            ball.x = canvas.width / 2;
-            ball.y = canvas.height / 2;
-            ball.dx = 4;
-            ball.dy = -4;
-            paddle.x = canvas.width / 2 - paddle.width / 2;
-            gameOver = false;
-            bounceCount = 0;
-            bounceCountDisplay.textContent = bounceCount; // Reset bounce count display
-            restartButton.style.display = 'none'; // Hide "Start Over" button
-            update(); // Restart game loop
-        }
-
-        // Update the game (move paddle, move ball, redraw)
-        function update() {
-            // Clear the canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // If game is over, display Game Over text and stop updating
-            if (gameOver) {
-                drawGameOver();
-                return;
-            }
-
-            // Move and draw everything
-            movePaddle();
-            moveBall();
-            drawPaddle();
-            drawBall();
-
-            requestAnimationFrame(update);
-        }
-
-        // Event listeners for paddle movement
-        document.addEventListener('keydown', keyDown);
-        document.addEventListener('keyup', keyUp);
-
-        // Event listener for restarting the game
-        restartButton.addEventListener('click', restartGame);
-
-        // Start the game
-        update();
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ryan Stenning — AI systems engineer</title>
+    <meta
+      name="description"
+      content="Ryan Stenning is an AI systems engineer in Cape Town. He puts AI into real operating systems: integrations, monitored workflows, and cloud — not chatbot demos."
+    />
+    <link rel="canonical" href="https://ryanksten.github.io/" />
+    <meta name="author" content="Ryan Stenning" />
+    <meta name="theme-color" content="#0c0b09" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ryanksten.github.io/" />
+    <meta property="og:title" content="Ryan Stenning — AI systems engineer" />
+    <meta
+      property="og:description"
+      content="I put AI into real operating systems: integrations, monitored workflows, and cloud — not chatbot demos."
+    />
+    <meta property="og:image" content="https://ryanksten.github.io/images/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ryan Stenning — AI systems engineer" />
+    <meta
+      name="twitter:description"
+      content="I put AI into real operating systems: integrations, monitored workflows, and cloud — not chatbot demos."
+    />
+    <meta name="twitter:image" content="https://ryanksten.github.io/images/og.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/ryan-stenning.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ryan Stenning",
+        "jobTitle": "AI systems engineer",
+        "url": "https://ryanksten.github.io/",
+        "email": "mailto:Ryanksten@gmail.com",
+        "image": "https://ryanksten.github.io/images/ryan-stenning.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cape Town",
+          "addressCountry": "ZA"
+        },
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "name": "365 Finance"
+          },
+          {
+            "@type": "Organization",
+            "name": "Lumenyl"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ryan-stenning",
+          "https://github.com/Ryanksten"
+        ],
+        "knowsAbout": [
+          "Applied AI",
+          "Agent workflows",
+          "Systems integration",
+          "AWS",
+          "n8n",
+          "Salesforce"
+        ]
+      }
     </script>
-							</article>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-						<!-- Contact -->
-                        <!-- Contact -->
-<article id="contact">
-    <h2 class="major">Contact</h2>
-    <form id="contact-form">
-        <div class="fields">
-            <div class="field half">
-                <label for="name">Name</label>
-                <input type="text" name="to_name" id="name" required />
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="#top">Ryan Stenning</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="#now">Now</a>
+          <a href="#work">Work</a>
+          <a href="#approach">Approach</a>
+          <a href="#path">Path</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-name">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Cape Town · AI systems</p>
+            <h1 id="hero-name">Ryan Stenning</h1>
+            <p class="thesis">
+              I put AI into real operating systems: integrations, monitored
+              workflows, and cloud — not chatbot demos.
+            </p>
+            <p class="lede">
+              Software developer in technical operations at a UK SME lender,
+              and independent practice through Lumenyl. I connect the systems
+              you already run so a model becomes a step in a path someone owns.
+            </p>
+            <ul class="hero-links">
+              <li>
+                <a href="https://www.linkedin.com/in/ryan-stenning">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://github.com/Ryanksten">GitHub</a>
+              </li>
+              <li>
+                <a href="mailto:Ryanksten@gmail.com">Email</a>
+              </li>
+            </ul>
+          </div>
+          <figure class="hero-portrait">
+            <img
+              src="images/ryan-stenning.jpg"
+              width="800"
+              height="800"
+              alt="Portrait of Ryan Stenning in a light blue shirt, looking at the camera."
+            />
+            <figcaption>Cape Town, 2026</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="now" id="now" aria-labelledby="now-heading">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker">01 · Now</p>
+            <h2 id="now-heading">Two desks, one craft</h2>
+          </header>
+          <div class="now-split">
+            <article class="now-col">
+              <p class="now-role">Employment</p>
+              <h3>365 Finance</h3>
+              <p class="now-meta">Software Developer, Technical Operations · Jan 2025 – present</p>
+              <p>
+                UK SME lender, Cape Town branch. I build the path from messy
+                operations to something monitored: AI-assisted underwriting
+                pipelines on AWS Bedrock, orchestration in n8n, Salesforce as
+                the system of record. The model is a step in a decision path —
+                not a window on the side.
+              </p>
+            </article>
+            <article class="now-col">
+              <p class="now-role">Independent</p>
+              <h3>Lumenyl</h3>
+              <p class="now-meta">AI integrations &amp; automation · 2024 – present</p>
+              <p>
+                I help mid-market teams make AI useful in the stack they
+                already have. Readiness and architecture before model worship.
+                Systems of record talking to each other, then a pilot that
+                becomes a habit — without chatbot theatre.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-heading">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker">02 · Selected work</p>
+            <h2 id="work-heading">What the work actually is</h2>
+            <p class="section-intro">
+              Outcome-shaped, not a task dump. Client names stay off the page
+              unless the work is already public or is a product I can point at.
+            </p>
+          </header>
+
+          <ol class="work-list">
+            <li class="work-item">
+              <span class="work-index" aria-hidden="true">01</span>
+              <div class="work-body">
+                <h3>Lender operations</h3>
+                <p class="work-meta">365 Finance · 2025 – present</p>
+                <p>
+                  AI-assisted underwriting and ops pipelines for a UK SME
+                  lender. Bedrock in the loop, n8n for orchestration, Salesforce
+                  as source of truth. The interesting part is the plumbing:
+                  routing, monitoring, and making the model a step in a real
+                  decision path.
+                </p>
+                <p class="work-tags">AWS Bedrock · n8n · Salesforce · Python</p>
+              </div>
+            </li>
+            <li class="work-item">
+              <span class="work-index" aria-hidden="true">02</span>
+              <div class="work-body">
+                <h3>Tax-portal invoice automation</h3>
+                <p class="work-meta">VAT IT · 2023 – 2024</p>
+                <p>
+                  Automated invoice submission to the UAE tax portal with
+                  Selenium and Spring Boot, plus scrapers and AWS document
+                  retrieval so tax communications did not depend on someone
+                  clicking through a government site. Companion work: RPA,
+                  Salesforce flows, and an HR ticketing path for a
+                  thousand-person organisation.
+                </p>
+                <p class="work-tags">Java · Spring Boot · Selenium · AWS · Salesforce</p>
+              </div>
+            </li>
+            <li class="work-item">
+              <span class="work-index" aria-hidden="true">03</span>
+              <div class="work-body">
+                <h3>Studio operations</h3>
+                <p class="work-meta">Independent · confidential</p>
+                <p>
+                  Reporting and automation for a production and rental studio.
+                  Sage exports and spreadsheets were the messy source of truth;
+                  the work was pipelines and dashboards so leadership was not
+                  assembling the week by hand. WordPress and client tooling
+                  around the same operational grain.
+                </p>
+                <p class="work-tags">Automation · reporting · ops tooling</p>
+              </div>
+            </li>
+            <li class="work-item">
+              <span class="work-index" aria-hidden="true">04</span>
+              <div class="work-body">
+                <h3>
+                  <a href="https://housely.co.za/" rel="noopener noreferrer"
+                    >Housely</a
+                  >
+                </h3>
+                <p class="work-meta">Product · housely.co.za</p>
+                <p>
+                  South African rental marketplace: swipe to match, document
+                  verification, in-app chat. Product work, kept commercially
+                  separate from consulting.
+                </p>
+                <p class="work-tags">Product · TypeScript · marketplace</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="approach" id="approach" aria-labelledby="approach-heading">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker">03 · How I work</p>
+            <h2 id="approach-heading">Three rules that survive contact with production</h2>
+          </header>
+          <ol class="principles">
+            <li>
+              <h3><span>01</span> Systems of record first</h3>
+              <p>
+                If Salesforce, the ledger, or the clinical system does not
+                move, the model does not matter. Integrate before you prompt.
+                Chat windows that never write back are theatre.
+              </p>
+            </li>
+            <li>
+              <h3><span>02</span> Readiness before model worship</h3>
+              <p>
+                Most failed AI projects skipped the unglamorous scan: data
+                access, owners, failure modes, and what “done” looks like in
+                the existing stack. Architecture and sequencing beat a clever
+                demo.
+              </p>
+            </li>
+            <li>
+              <h3><span>03</span> Pilot to habit</h3>
+              <p>
+                A workflow is finished when it is monitored, owned, and boring —
+                not when the demo lands. Build the path, name the operator,
+                leave the docs.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="stack" id="stack" aria-labelledby="stack-heading">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker">04 · Capabilities</p>
+            <h2 id="stack-heading">What I reach for</h2>
+          </header>
+          <dl class="stack-sheet">
+            <div>
+              <dt>Applied AI &amp; agents</dt>
+              <dd>
+                Production agent workflows, AWS Bedrock, Claude, evaluation-minded
+                prompts, guardrails. Applied AI in operating systems — not
+                prototype chat.
+              </dd>
             </div>
-            <div class="field half">
-                <label for="email">Email</label>
-                <input type="email" name="from_name" id="email" required />
+            <div>
+              <dt>Integrations &amp; orchestration</dt>
+              <dd>
+                n8n, Salesforce, REST APIs, ETL. Connecting systems of record so
+                they behave as one stack.
+              </dd>
+            </div>
+            <div>
+              <dt>Cloud</dt>
+              <dd>AWS and GCP. Docker. Pipelines that can be watched.</dd>
+            </div>
+            <div>
+              <dt>Languages</dt>
+              <dd>
+                TypeScript, JavaScript, Python, SQL. Java, Kotlin, and Spring
+                Boot from prior production — still in the kit, not the lead.
+              </dd>
+            </div>
+            <div>
+              <dt>Surfaces</dt>
+              <dd>Next.js, React, Node, PostgreSQL when the work needs a product face.</dd>
+            </div>
+            <div>
+              <dt>Earlier production</dt>
+              <dd>
+                Angular, Power Platform, Automation Anywhere, Apex / Salesforce
+                Flows. Useful history. Not the current centre of gravity.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="path" id="path" aria-labelledby="path-heading">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker">05 · Path</p>
+            <h2 id="path-heading">Where this comes from</h2>
+          </header>
+          <ol class="timeline">
+            <li>
+              <p class="when">2025 – present</p>
+              <h3>365 Finance</h3>
+              <p>Software Developer, Technical Operations. Cape Town.</p>
+            </li>
+            <li>
+              <p class="when">2024 – present</p>
+              <h3>Lumenyl</h3>
+              <p>Independent practice. AI integrations and automation for mid-market teams.</p>
+            </li>
+            <li>
+              <p class="when">2023 – 2024</p>
+              <h3>VAT IT</h3>
+              <p>
+                Automation &amp; Salesforce Developer, then Software Engineer.
+                RPA, tax-portal automation, Salesforce, AWS.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <header class="section-head">
+              <p class="kicker">06 · Contact</p>
+              <h2 id="contact-heading">If it has to live in a real system</h2>
+            </header>
+            <p>
+              Working on something that needs to sit in production — not a
+              slide? Write to me. Employment stays at 365; independent work
+              goes through Lumenyl.
+            </p>
+            <ul class="direct-links">
+              <li>
+                <a href="mailto:Ryanksten@gmail.com">Ryanksten@gmail.com</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/ryan-stenning">linkedin.com/in/ryan-stenning</a>
+              </li>
+              <li>
+                <a href="https://github.com/Ryanksten">github.com/Ryanksten</a>
+              </li>
+            </ul>
+          </div>
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="to_name" autocomplete="name" required />
             </div>
             <div class="field">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="4" required></textarea>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="from_name"
+                autocomplete="email"
+                required
+              />
             </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-row">
+              <button type="submit" class="btn" id="send-btn">Send</button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+            <noscript>
+              <p class="form-status">JavaScript is off — email Ryanksten@gmail.com instead.</p>
+            </noscript>
+          </form>
         </div>
-        <ul class="actions">
-            <li><input type="submit" value="Send Message" class="primary" /></li>
-            <li><input type="reset" value="Reset" /></li>
-        </ul>
-    </form>
-    <ul class="icons">
-        <li><a href="https://www.linkedin.com/in/ryan-stenning" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="https://github.com/Ryanksten" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="mailto:Ryanksten@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-    </ul>
-</article>
+      </section>
+    </main>
 
-<!-- Include EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-    
-    (function(){
-        emailjs.init("iba9MU2Dl9ofdcOdo"); 
-    })();
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© <span id="year">2026</span> Ryan Stenning</p>
+        <p class="aside">Also makes music, on the side.</p>
+      </div>
+    </footer>
 
-    // Handle form submission
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Send form data using EmailJS
-        emailjs.sendForm("service_y13dioo", "template_ouk1lje", this)
-        .then(function() {
-            alert("Thank you! Your message has been sent.");
-        }, function(error) {
-            alert("Failed to send message. Please try again.");
-            console.error("EmailJS error:", error);
-        });
-    });
-</script>
-
-                        
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/ryan-stenning" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Ryanksten" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto:Ryanksten@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<p class="copyright">&copy; Music:Still waiting here - Geotech - Ryan Stenning</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-            <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-            <script type="text/javascript">
-              (function() {
-                emailjs.init("iba9MU2Dl9ofdcOdo");
-              })();
-            </script>
-	</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"
+      defer
+    ></script>
+    <script src="assets/js/site.js" defer></script>
+  </body>
 </html>
