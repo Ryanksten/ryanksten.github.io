@@ -4,17 +4,59 @@ h1, h2, h3, h4, h5, h6, header p {
 	letter-spacing: 0.12rem;
 }
 
-#header audio {
-	display: block;
-	margin: 1.5rem auto 0;
-	width: min(18rem, 90%);
-	max-width: 100%;
-	opacity: 0.88;
+h1 {
+	font-size: 1.85rem;
+	letter-spacing: 0.28rem;
+}
+
+/* Compact homepage so name, nav, and music fit one viewport */
+
+#wrapper {
+	padding: 1.75rem 2rem;
+}
+
+#header > * {
+	margin-top: 1.65rem;
+}
+
+#header > *:before {
+	top: calc(-1.65rem - 1px);
+	height: calc(1.65rem + 1px);
+}
+
+#header .logo {
+	width: 4rem;
+	height: 4rem;
+	line-height: 4rem;
+}
+
+#header .logo .icon:before {
+	font-size: 1.5rem;
+}
+
+#header .content .inner {
+	padding: 1.35rem 1.75rem;
 }
 
 #header .content p {
 	letter-spacing: 0.08rem;
-	line-height: 1.65;
+	line-height: 1.5;
+}
+
+#header audio {
+	display: block;
+	margin: 1rem auto 0;
+	width: min(16rem, 90%);
+	max-width: 100%;
+	opacity: 0.88;
+}
+
+#header > audio:before {
+	display: none;
+}
+
+#footer {
+	margin-top: 0.85rem;
 }
 
 #form-status {
@@ -35,8 +77,64 @@ article a {
 	border-bottom-color: rgba(255, 255, 255, 0.35);
 }
 
+/* Glass overlay articles */
+
+#main article {
+	border-radius: 1.25rem;
+	background-color: rgba(20, 22, 26, 0.42);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.35);
+	-webkit-backdrop-filter: blur(18px) saturate(1.35);
+	backdrop-filter: blur(18px) saturate(1.35);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	#main article {
+		background-color: rgba(20, 22, 26, 0.88);
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	#main article {
+		background-color: rgba(20, 22, 26, 0.88);
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+}
+
 @media screen and (max-width: 736px) {
+	#wrapper {
+		padding: 1.25rem 1rem;
+	}
+
+	#header > * {
+		margin-top: 1.25rem;
+	}
+
+	#header > *:before {
+		top: calc(-1.25rem - 1px);
+		height: calc(1.25rem + 1px);
+	}
+
+	#header .content .inner {
+		padding: 1.1rem 1rem;
+	}
+
 	#header audio {
-		margin-top: 1rem;
+		margin-top: 0.75rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#header .logo {
+		width: 3.5rem;
+		height: 3.5rem;
+		line-height: 3.5rem;
+	}
+
+	h1 {
+		font-size: 1.5rem;
 	}
 }
