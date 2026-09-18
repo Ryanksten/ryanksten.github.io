@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>365 Finance · The 365 Brief · September 2026</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#fff;color:#303030;font-family:Arial,Helvetica,sans-serif;line-height:1.2}
+p,h1,h2,ul,li{margin:0;padding:0}a{color:#de6da3;font-weight:700;text-decoration:none}a:hover{color:#303030}
+.wrap{max-width:920px;margin:0 auto;border:1px solid rgba(48,48,48,.18);overflow:hidden}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid rgba(48,48,48,.18)}
+.mark{font-weight:800;letter-spacing:-.04em;font-size:22px}.mark i{color:#0cddc4;font-style:normal}
+.kicker{text-align:right;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.kicker span{display:block;margin-top:4px;color:#de6da3;letter-spacing:.04em;font-size:11px;text-transform:none}
+.hero{position:relative;padding:36px 22px 42px;background:#f7f7f7;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-40px;top:-30px;width:180px;height:240px;background:#0cddc4;clip-path:polygon(32% 0,100% 0,68% 100%,0 100%)}
+.badge{display:inline-block;background:#0cddc4;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;margin-bottom:16px;position:relative;z-index:1}
+.hero h1{position:relative;z-index:1;font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;line-height:1.08;max-width:16ch;margin-bottom:14px}
+.hero p{position:relative;z-index:1;font-size:18px;line-height:1.3;max-width:38ch;margin-bottom:22px}
+.btn{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;background:#0cddc4;color:#fff!important;font-weight:700;font-size:16px;padding:14px 22px}
+.btn:hover{background:#000}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(48,48,48,.18);border-top:1px solid rgba(48,48,48,.18);border-bottom:1px solid rgba(48,48,48,.18)}
+.stat{background:#fff;padding:22px 18px}.stat b{display:block;font-size:28px;letter-spacing:-.03em;margin-bottom:6px}.stat span{font-size:13px;line-height:1.3;color:#4d4d4d}
+.section{padding:32px 22px}.label{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#de6da3;margin-bottom:10px}
+.section h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.03em;margin-bottom:18px}
+.stories input{position:absolute;opacity:0;pointer-events:none}
+.tabs{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+.tabs label{border-bottom:2px solid transparent;font-weight:700;font-size:14px;padding:8px 2px;cursor:pointer}
+#s1:checked~.tabs label[for=s1],#s2:checked~.tabs label[for=s2],#s3:checked~.tabs label[for=s3]{border-bottom-color:#de6da3;color:#de6da3}
+.story{display:none}#s1:checked~.p1,#s2:checked~.p2,#s3:checked~.p3{display:block}
+.story p{font-size:17px;line-height:1.35;margin-bottom:12px}
+.art{display:grid;grid-template-columns:1.2fr .8fr;gap:8px;margin:18px 0;min-height:120px}
+.art i{display:block;min-height:120px}.a{background:#0cddc4;clip-path:polygon(0 12%,100% 0,100% 88%,0 100%)}.b{background:#de6da3}
+.list{list-style:none;border-top:2px solid rgba(48,48,48,.18)}.list li{border-bottom:2px solid rgba(48,48,48,.18);padding:14px 0;font-size:18px;font-weight:500}
+.band{position:relative;padding:40px 22px}.band:before{content:"";position:absolute;inset:18px 0;background:#0cddc4;clip-path:polygon(0 18%,100% 0,100% 82%,0 100%)}
+.inner{position:relative;z-index:1;display:grid;gap:16px}.step{background:rgba(255,255,255,.72);padding:16px 18px}.step b{display:block;font-size:20px;margin-bottom:6px}
+.quotes{padding:32px 22px 8px}.q{font-size:42px;line-height:1;color:#0cddc4;font-weight:800;margin-bottom:8px}
+.quote{padding:0 0 22px;margin-bottom:18px;border-bottom:1px solid rgba(48,48,48,.18)}.quote p{font-size:20px;line-height:1.3}.who{margin-top:12px;font-size:14px;font-weight:700;color:#de6da3}
+.diary{background:#f7f7f7;padding:32px 22px}.row{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(48,48,48,.18);font-size:15px}
+.row strong{font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:18px 22px;border-top:2px solid rgba(48,48,48,.2);font-size:13px}
+.note{padding:10px 22px 18px;font-size:11px;color:#6b6b6b;line-height:1.4}
+@media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}.inner{grid-template-columns:repeat(3,1fr)}.hero{padding:48px 36px 56px}.section,.quotes,.diary,.top,.foot,.note,.band{padding-left:36px;padding-right:36px}}
+</style>
+</head>
+<body>
+<article class="wrap">
+<header class="top">
+<div class="mark">365 f<i>i</i>nance</div>
+<p class="kicker">September 2026<span>Internal newsletter · demo</span></p>
+</header>
+<section class="hero">
+<div class="badge">The 365 Brief</div>
+<h1>Funding that follows your card sales.</h1>
+<p>A September round-up for the team: revenue-based finance, in-house innovation, and the shops, clinics and restaurants we are backing this month.</p>
+<a class="btn" href="https://www.365finance.co.uk/registration/" target="_blank" rel="noopener">Apply now →</a>
+</section>
+<div class="stats">
+<div class="stat"><b>90%</b><span>Typical approval rate on a simple application</span></div>
+<div class="stat"><b>24 hrs</b><span>Funding decision — often the same working day</span></div>
+<div class="stat"><b>£500k</b><span>Upper facility size for UK SMEs this autumn</span></div>
+<div class="stat"><b>One cost</b><span>All-inclusive. No APR, no admin extras</span></div>
+</div>
+<section class="section stories">
+<p class="label">This month</p>
+<h2>Stories from the floor</h2>
+<input type="radio" name="story" id="s1" checked>
+<input type="radio" name="story" id="s2">
+<input type="radio" name="story" id="s3">
+<div class="tabs">
+<label for="s1">Innovation</label>
+<label for="s2">Customer</label>
+<label for="s3">The F word</label>
+</div>
+<article class="story p1">
+<div class="art" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
+<p><strong>In-house innovation.</strong> Two years on from the King’s Award for Enterprise: Innovation, Rev&amp;U is still the engine behind 24-hour underwriting. September’s demo pipeline is the autumn refresh — faster reads on card-sales files, same dedicated relationship manager on every facility.</p>
+<p>If a broker asks what changed: nothing about the product promise. Pay us back when customers pay you. One cost, agreed up front.</p>
+</article>
+<article class="story p2">
+<div class="art" aria-hidden="true"><i class="b"></i><i class="a"></i></div>
+<p><strong>Jess takes her shop online.</strong> Demo case for September: a high-street retailer using a merchant cash advance to stand up ecommerce before the festive peak. Repayments track card takings, so quieter Tuesdays cost less than Saturday queues.</p>
+<p>Use this story on partner calls. Flexible funding for owners who cannot pause the till to write a 40-page business plan.</p>
+</article>
+<article class="story p3">
+<div class="art" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
+<p><strong>The ‘F’ word in business.</strong> Funding should not feel like a threat. No security, no fixed monthly direct debit, no hidden extras. If sales dip, the take dips with them.</p>
+<p>September reminder for new joiners: we buy a slice of future card revenue. We do not sell a bank loan in different clothes.</p>
+</article>
+</section>
+<section class="section" style="padding-top:0">
+<p class="label">Advantages</p>
+<h2>Revenue-based finance</h2>
+<ul class="list">
+<li>Simple application. Soft check only — it does not dent a credit file.</li>
+<li>Dedicated relationship manager on every deal.</li>
+<li>No security and no business plan required.</li>
+<li>One all-inclusive cost that never changes.</li>
+<li>No fixed term and no fixed monthly payments.</li>
+</ul>
+</section>
+<section class="band">
+<div class="inner">
+<div class="step"><b>1. Apply in minutes</b>Future card sales become working capital today.</div>
+<div class="step"><b>2. Funds in 24 hours</b>A lump sum into the business account for any genuine need.</div>
+<div class="step"><b>3. Watch it grow</b>Repayments move with the till, not against it.</div>
+</div>
+</section>
+<section class="quotes">
+<div class="q">“”</div>
+<div class="quote"><p>Turned down by the bank, funded from our card takings the same week. Demo quote for the September brief.</p><p class="who">— Claire, vet practice owner</p></div>
+<div class="quote"><p>From first call to funds without a 40-page plan. The cost we agreed in September is still the only cost.</p><p class="who">— Chris, shop owner</p></div>
+<div class="quote"><p>We were in a tight spot before the weekend service. 365 moved at the speed of the restaurant, not the bank.</p><p class="who">— Joe, restaurant owner</p></div>
+</section>
+<section class="diary">
+<p class="label">Team diary</p>
+<h2>September on the calendar</h2>
+<div class="row"><strong>4 Sep</strong><span>Broker breakfast, Manchester — walk through the autumn facility range.</span></div>
+<div class="row"><strong>12 Sep</strong><span>King’s Award anniversary notes for partner packs (demo copy).</span></div>
+<div class="row"><strong>18 Sep</strong><span>Q3 pipeline review. Bring live card-sales examples, not slides.</span></div>
+<div class="row"><strong>29 Sep</strong><span>Autumn partner webinar: payback that follows the till.</span></div>
+</section>
+<footer class="foot">
+<div><strong>0207 1000 365</strong><br>Mon–Fri 8.30–6pm</div>
+<div><a href="https://www.365finance.co.uk/" target="_blank" rel="noopener">365finance.co.uk</a></div>
+</footer>
+<p class="note">Demo content for a SharePoint Embed web part. Figures and stories are illustrative. Not a live offer or regulated promotion.</p>
+</article>
+</body>
+</html>
